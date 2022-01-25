@@ -1,4 +1,4 @@
-html {
+body {
   background-color: #35858b;
 }
 .brand {
@@ -15,4 +15,15 @@ html {
 
   text-transform: uppercase;
   word-spacing: 0.5vw;
+}
+.listDesign {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inputSearch {
+  width: 100%;
+}
+
+.cards {
+  width: 10 em;
 }

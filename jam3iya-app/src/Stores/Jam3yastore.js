@@ -5,14 +5,10 @@ import api from "./api";
 
 class Jam3yaStore {
   jam3ya = [];
-
+user = null;
   constructor() {
     makeAutoObservable(this, {
-      jam3ya: observable,
-      fetchjam3ya: action,
-      createjam3ya: action,
-      deletejam3ya: action,
-      updatejam3ya: action,
+     
     });
   }
   fetchJam3ya = async () => {
@@ -69,5 +65,5 @@ class Jam3yaStore {
 }
 const jam3yaStore = new Jam3yaStore();
 jam3yaStore.fetchJam3ya();
-console.log(jam3yaStore.fetchJam3ya())
+
 export default jam3yaStore;
