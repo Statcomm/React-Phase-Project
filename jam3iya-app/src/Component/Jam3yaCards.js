@@ -3,12 +3,13 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import jam3yaStore from '../Stores/Jam3yastore';
 import moment from 'moment';
 import bootstrap from 'bootstrap';
+import { Link } from 'react-router-dom';
 
 function Jam3yaCards({jam3yainfo}) {
   return <div style={{ maxHeight: '30vh', marginTop: '10vh' }}>
       
 <Card className="text-start" style={{ width: '16rem', margin: `2rem`, padding:`1rem` }}>
-  <Card.Img variant="top" src={jam3yainfo.image} style={{height: `100%`}}/>
+ <Link to ={`/jam3yalist/${jam3ya.slug}`}> <Card.Img variant="top" src={jam3yainfo.image} style={{height: `100%`}}/> </Link>
   <Card.Body>
     <Card.Title>{jam3yainfo.title}</Card.Title>
     <Card.Text>
@@ -21,6 +22,7 @@ function Jam3yaCards({jam3yainfo}) {
   <Card.Body>
     <Card.Link href="#">Join Jam3ya</Card.Link>
     <Card.Link href="#">Arra3y {jam3yainfo.author.username}</Card.Link>
+    
   </Card.Body>
 </Card>
 
