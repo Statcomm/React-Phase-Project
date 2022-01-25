@@ -1,14 +1,14 @@
 import { makeAutoObservable, observable, action } from "mobx";
-import axios from "axios";
 import api from "./api";
 
 
 class Jam3yaStore {
   jam3ya = [];
-
+user = null;
   constructor() {
     makeAutoObservable(this, {
 
+     
     });
   }
   fetchJam3ya = async () => {

@@ -1,4 +1,4 @@
-html {
+body {
   background-color: #35858b;
 }
 .brand {
@@ -17,6 +17,16 @@ html {
   word-spacing: 0.5vw;
 }
 
-.btn{
+
   
+.listDesign {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inputSearch {
+  width: 100%;
+}
+
+.cards {
+  width: 10 em;
 }

@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";  
-// import {Button} from "react-bootstrap"
+import jam3yaStore from "../Stores/Jam3yastore";
+
 
 
 function NavBar() {
@@ -16,22 +17,14 @@ function NavBar() {
           <Navbar.Brand className="brand">3a6ny "Your" Flosik</Navbar.Brand>
           <Container>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-               {/* <Nav.Link onClick={()=>{ setSignUpIsOpen(!signUpIsOpen) }}>SignUp</Nav.Link> */}
-               {/* <SignUpModal show={SignupIsOpen}/> */}
-               {/* <Nav.Link onClick={()=>setSignInIsOpen(true)}>SignIn</Nav.Link> */}
-               {/* <SignInModal show={SigninIsOpen}/> */}
-              {/* <input
-                className="brandInput"
-                placeholder="dawir jam3iya bsir3a"
-              /><p>show how many jam3iya you are in + the sum of all comintment<p>*/} 
-              {/* <Button onClick={()=>{ setSignUpIsOpen(!signUpIsOpen) }}>Sign Up</Button> 
-               <Button onClick={()=>setSignInIsOpen(true)}>Sign In</Button> */}
-             
-
-              <Nav.Link>Rules</Nav.Link>
+              
               <SignUpModal isOpen={signUpIsOpen}/>
               <SignInModal isOpen={signInIsOpen}/>
+              <Nav.Link href="#home">Home</Nav.Link><Nav.Link>Rules</Nav.Link>
+              {jam3yaStore.user ?<> <button>Logout</button>  </>:<><button>sign in</button> <button>sign up</button>  
+            </> }
+
+              
             </Nav>
           </Container>
           <div style={{ color: "white" }}>{d}</div>

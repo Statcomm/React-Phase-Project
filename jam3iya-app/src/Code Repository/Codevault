@@ -1,0 +1,6 @@
+  // const jam3yaList = jam3yaStore.jam3ya.map((jam3ya) => <Jam3yaCards jam3yainfo = {jam3ya} />)
+
+  
+  {/* {jam3yaList}  */}
+
+        {/* <div className="divButton">{jam3yaList}</div> */}
