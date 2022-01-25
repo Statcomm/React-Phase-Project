@@ -16,7 +16,7 @@ function Jam3yaCards({jam3yainfo}) {
     </Card.Text>
   </Card.Body>
   <ListGroup className="list-group-flush">
-    <ListGroupItem>Jam3ya limit: {jam3yainfo.limit}.</ListGroupItem>
+    <ListGroupItem>Jam3ya limit: {jam3yainfo.limit}. Amount: {jam3yainfo.amount} </ListGroupItem>
   </ListGroup>
   <Card.Body>
     <Card.Link href="#">Join Jam3ya</Card.Link>
