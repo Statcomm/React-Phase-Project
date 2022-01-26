@@ -1,21 +1,15 @@
-import { makeAutoObservable, observable, action } from "mobx";
+import { makeAutoObservable } from "mobx";
 import api from "./api";
-
 
 class Jam3yaStore {
   jam3ya = [];
-user = null;
+  user = null;
   constructor() {
-    makeAutoObservable(this, {
-
-     
-    });
+    makeAutoObservable(this, {});
   }
   fetchJam3ya = async () => {
     try {
-      const response = await api.get(
-        "/jam3ya"
-      );
+      const response = await api.get("/jam3ya");
       this.jam3ya = response.data;
     } catch (e) {
       console.log(e);
@@ -23,10 +17,7 @@ user = null;
   };
   createJam3ya = async (newjam3ya) => {
     try {
-      const response = await api.post(
-        "/jam3ya",
-        newjam3ya
-      );
+      const response = await api.post("/jam3ya", newjam3ya);
 
       this.jam3ya.push(response.data);
     } catch (e) {
@@ -38,9 +29,7 @@ user = null;
 
   deleteJam3ya = async (id) => {
     try {
-      await api.delete(
-       ` /jam3ya/${id}`
-      );
+      await api.delete(` /jam3ya/${id}`);
       const tempjam3ya = this.jam3ya.filter((jam3ya) => jam3ya.id !== id);
       this.jam3ya = tempjam3ya;
     } catch (e) {
@@ -68,74 +57,17 @@ jam3yaStore.fetchJam3ya();
 
 export default jam3yaStore;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import { makeAutoObservable} from "mobx";
 // import api from "./api";
 // import decode from "jwt-decode"
 
-
 // class Jam3yaStore {
-  
+
 //   j = null;
 
 //   constructor() {
 //     makeAutoObservable(this, {
-     
+
 //     });
 //   }
 // setUser = (token) => {
@@ -162,7 +94,7 @@ export default jam3yaStore;
 //   if(token){
 //       const currentTime = Date.now()
 //       const exp = decode(decode).token
-//       if(this.j.exp>currentTime){ 
+//       if(this.j.exp>currentTime){
 //           this.setUser(token)
 //       } else {
 //           alert("Session Expiered")
@@ -170,7 +102,6 @@ export default jam3yaStore;
 //       }
 //   }
 // }
-
 
 // }
 
@@ -225,7 +156,6 @@ export default jam3yaStore;
 //   //     console.log(error);
 //   //   }
 //   // };
-  
 
 // const jam3yaStore = new Jam3yaStore();
 // //jam3yaStore.fetchJam3ya();
