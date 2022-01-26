@@ -4,7 +4,7 @@ import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";  
 import jam3yaStore from "../Stores/Jam3yastore";
 import { observer } from 'mobx-react-lite';
- import { Link } from 'react-router-dom';
+import CreateJam3yaModal from "./CreateJam3yaModal";
 
 
 
@@ -18,6 +18,7 @@ function NavBar() {
       <>
         <Navbar bg="dark" variant="dark">
           <Navbar.Brand className="brand">3a6ny "Your" Flosik</Navbar.Brand>
+          <CreateJam3yaModal isOpen={signInIsOpen} />
           <Container>
             <Nav className="me-auto">
               
@@ -30,6 +31,10 @@ function NavBar() {
             </> }
 
               
+              <Nav.Link href="#home">Home</Nav.Link><Nav.Link>Rules</Nav.Link>
+              {jam3yaStore.user ?<> <button>Logout</button>  </>:<><SignInModal isOpen={signInIsOpen}/>  <SignUpModal isOpen={signUpIsOpen}/>  
+            </> }
+            
             </Nav>
             <>
               {" "}
