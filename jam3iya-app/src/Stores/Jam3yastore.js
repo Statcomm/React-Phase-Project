@@ -27,13 +27,17 @@ class Jam3yaStore {
     // to do : call BE to create a jam3ya
   };
 
-  deleteJam3ya = async (id) => {
+  deleteJam3ya = async (jam3yaId) => {
     try {
       await api.delete(` /jam3ya/${id}`);
       const tempjam3ya = this.jam3ya.filter((jam3ya) => jam3ya.id !== id);
+      await api.delete(
+       `jam3ya/${jam3yaId}`
+      );
+      const tempjam3ya = this.jam3ya.filter((jam3ya) => jam3ya.id !== jam3yaId);
       this.jam3ya = tempjam3ya;
     } catch (e) {
-      alert("cannot delete the jam3ya");
+      alert("Cannot delete the jam3ya");
     }
     // to do : call BE to delete a jam3ya
   };
