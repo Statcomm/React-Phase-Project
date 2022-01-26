@@ -11,14 +11,14 @@ function SignUpModal() {
     const [user, setUser] = useState({
         username: "", email: "", password: "" 
     })       
-     console.log(user);
+    //  console.log(user);
 
     const handleChange = (e)=>{ setUser({...user, [e.target.name]: e.target.value})}
     const handleSubmit = (e)=>{
-        console.log(e);
+        // console.log(e);
         e.preventDefault()
         authStore.signUpMethod(user)
-        console.log(user);
+        // console.log(user);
         handleClose();
     }
   return (

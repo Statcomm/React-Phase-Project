@@ -30,3 +30,18 @@ body {
 .cards {
   width: 10 em;
 }
+.card {
+  background-color: burlywood;
+  margin: 5px;
+  
+}
+.card img{
+  width: 200px;
+  height: 200px;
+  
+}
+.card p{
+  text-align: center;
+  color: black;
+  
+}

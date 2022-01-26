@@ -4,6 +4,7 @@ import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";  
 import jam3yaStore from "../Stores/Jam3yastore";
 import { observer } from 'mobx-react-lite';
+ import { Link } from 'react-router-dom';
 
 
 
@@ -22,7 +23,9 @@ function NavBar() {
               
              
               
-              <Nav.Link href="#home">Home</Nav.Link><Nav.Link>Rules</Nav.Link>
+             <Nav.Link> <Link  to="/">Home</Link> </Nav.Link>
+              <Nav.Link>Rules</Nav.Link>
+              <Nav.Link  ><Link to="/jam3yalist">Jam3ya List</Link></Nav.Link>
               {jam3yaStore.user ?<> <button>Logout</button>  </>:<><SignInModal isOpen={signInIsOpen}/>  <SignUpModal isOpen={signUpIsOpen}/>  
             </> }
 
