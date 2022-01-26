@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";  
@@ -8,10 +8,10 @@ import { observer } from 'mobx-react-lite';
 
 
 
+import { observer } from "mobx-react-lite";
+import authStore from "../Stores/authStore";
 
 function NavBar() {
-  const [signUpIsOpen, setSignUpIsOpen] = useState(false);
-  const [signInIsOpen, setSignInIsOpen] = useState(false);
   let d = Date();
   return (
     <div>
@@ -31,6 +31,16 @@ function NavBar() {
 
               
             </Nav>
+            <>
+              {" "}
+              {authStore.user ? (
+                <>
+                  <button onClick={authStore.logout}>logout</button>
+                </>
+              ) : (
+                <p> </p>
+              )}
+            </>
           </Container>
           <div style={{ color: "white" }}>{d}</div>
         </Navbar>
@@ -39,4 +49,4 @@ function NavBar() {
   );
 }
 
-export default observer(NavBar) ;
+export default observer(NavBar);
