@@ -3,7 +3,6 @@ import api from "./api";
 
 class Jam3yaStore {
   jam3ya = [];
-  user = null;
   constructor() {
     makeAutoObservable(this, {});
   }
@@ -29,8 +28,8 @@ class Jam3yaStore {
 
   deleteJam3ya = async (jam3yaId) => {
     try {
-      await api.delete(` /jam3ya/${id}`);
-      const tempjam3ya = this.jam3ya.filter((jam3ya) => jam3ya.id !== id);
+      // await api.delete(` /jam3ya/${id}`);
+      // const tempjam3ya = this.jam3ya.filter((jam3ya) => jam3ya.id !== id);
       await api.delete(
        `jam3ya/${jam3yaId}`
       );

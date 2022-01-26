@@ -7,6 +7,8 @@ import { Container, SplitButton, Dropdown, Form } from "react-bootstrap";
 import authStore from "../Stores/authStore";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
+import CreateJam3yaModal from "./CreateJam3yaModal";
+
 
 function Jam3yalist() {
   const [jam3yaQuery, setjam3yaQuery] = useState("");
@@ -61,6 +63,7 @@ function Jam3yalist() {
                   onChange={(e) => setjam3yaDate(e.target.value)}
                 />
               </Form.Group>
+              <CreateJam3yaModal/>
             </Form>
 
             {jam3yaList}
