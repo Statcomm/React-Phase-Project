@@ -4,7 +4,7 @@ import api from "./api";
 
 class Jam3yaStore {
   jam3ya = [];
-user = null;
+
   constructor() {
     makeAutoObservable(this, {
 
