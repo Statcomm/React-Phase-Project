@@ -1,10 +1,23 @@
-import React from 'react';
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import jam3yaStore from '../Stores/Jam3yastore';
 import moment from 'moment';
 import bootstrap from 'bootstrap';
+import { observer } from "mobx-react-lite";
 
 function Jam3yaCards({jam3yainfo}) {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeModal = () => setIsOpen(false);
+
+  const openModal = () => setIsOpen(true);
+
+  const handleDelete = (event) => {
+    event.preventDefault()
+    jam3yaStore.deleteJam3ya(jam3yainfo._id)
+  };
+
   return <div style={{ maxHeight: '30vh', marginTop: '10vh' }}>
       
 <Card className="text-start" style={{ width: '16rem', margin: `2rem`, padding:`1rem` }}>
@@ -21,10 +34,16 @@ function Jam3yaCards({jam3yainfo}) {
   <Card.Body>
     <Card.Link href="#">Join Jam3ya</Card.Link>
     <Card.Link href="#">Arra3y {jam3yainfo.author.username}</Card.Link>
+    <Button className="delete" onClick={handleDelete}>
+        Delete
+      </Button>
+      <Button className="delete" onClick={openModal}>
+        Update
+      </Button>
   </Card.Body>
 </Card>
 
   </div>;
 }
 
-export default Jam3yaCards;
+export default observer (Jam3yaCards);
