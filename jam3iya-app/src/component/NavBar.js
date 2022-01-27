@@ -18,10 +18,6 @@ function NavBar() {
               {" "}
               <NavLink to="/">Home</NavLink>{" "}
             </Nav.Link>
-            <Nav.Link>Rules</Nav.Link>
-            <Nav.Link>
-              <Link to="/jam3yalist">Jam3ya List</Link>
-            </Nav.Link>
           </Nav>
           <>
             {authStore.user ? (
