@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { Card, ListGroup, ListGroupItem, Button } from "react-bootstrap";
 import jam3yaStore from '../Stores/Jam3yastore';
+import UpdateJam3yaModal from "./UpdateJam3yaModal";
 import moment from 'moment';
 // import bootstrap from 'bootstrap';
 
@@ -22,6 +23,7 @@ const Jam3yaCards = ({jam3yainfo}) => {
   console.log(jam3yaProps.slug);
 };
   return (
+    <> 
     <Link to={`/jam3yalist/${jam3yaProps.slug}`}>
       <div className="card">
         <img alt={jam3yaProps.title} src={jam3yaProps.image}/>
@@ -29,14 +31,20 @@ const Jam3yaCards = ({jam3yainfo}) => {
         <p>Limit: {jam3yaProps.limit}</p>
         <p>Start Date: {jam3yaProps.startDate}</p>
         <p>End Date: {jam3yaProps.endDate}</p>
+        
         <Button className="delete" onClick={handleDelete}>
         Delete
       </Button>
-      <Button className="delete" onClick={openModal}>
-        Update
-      </Button>
+
+      
+
       </div>
-    </Link>
+      </Link>
+      <button className="delete" onClick={openModal}>
+        Update
+      </button>
+      <UpdateJam3yaModal isOpen={isOpen} closeModal={closeModal} jam3ya={jam3yaProps}/>
+      </>
   )
 };
 
