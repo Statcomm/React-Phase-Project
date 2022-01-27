@@ -31,7 +31,7 @@ function CreateJam3yaModal() {
 return (
   
   <>
-    <Button variant="primary" onClick={handleShow}>
+    <Button   className="createButton"  onClick={handleShow}>
       Create Jam3ya
     </Button>
 

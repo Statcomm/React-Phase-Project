@@ -35,11 +35,11 @@ function Jam3yalist() {
   return (
     <div>
       {authStore.user ? (
-        <>
-          <Container className="listDesign">
-            <Form>
+        <div>
+          <Container >
+            <Form className="listDesign">
               <Form.Group className="mb-3">
-                <label>Dawir Jam3yaat By:</label>
+               
                 <Form.Control
                   className="inputSearch"
                   placeholder="Name"
@@ -62,13 +62,15 @@ function Jam3yalist() {
                   onChange={(e) => setjam3yaDate(e.target.value)}
                 />
               </Form.Group>
-              <CreateJam3yaModal />
+              <CreateJam3yaModal/>
             </Form>
+<div className="container"> 
 
             {jam3yaList}
+</div>
           </Container>
           ;
-        </>
+        </div>
       ) : (
         <>
           <SignInModal isOpen={signInIsOpen} />
